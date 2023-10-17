@@ -16,7 +16,7 @@ import lombok.ToString;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @ToString
 @NoArgsConstructor  
-@Data
+@Data  
 public class BusinessCode {
 	
 	private ServiceError service;
