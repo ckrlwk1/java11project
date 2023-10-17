@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value="/common")
-public class CommonController {
+public class CommonController {   
 	
 //	@PostMapping("/selectUserListMain")
 //	public ResponseEntity<?> authorization(HttpServletRequest request, HttpServletResponse response) throws Exception {
