@@ -1,0 +1,39 @@
+server.port: 8080
+
+spring:
+  db1:
+    datasource :
+      jdbc-url: jdbc:log4jdbc:mysql://localhost:3306/test?useSSL=false&autoReconnect=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Seoul
+      driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      poolName: hkr
+      username: root
+      password: 1234
+    
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: 
+    com.example.server
+  configuration:
+    map-underscore-to-camel-case: true
+    default-statement-timeout: 700000
+    jdbc-type-for-null: NULL
+    default-executor-type: REUSE
+    cache-enabled: TRUE
+    lazy-loading-enabled: TRUE    
+
+redis:
+  host: 112.172.131.100
+  port: 6379
+  password:
+  #session:
+  #  store-type: redis # 세션 저장소를 지정합니다.
+  #  redis:
+  #    namespace: zum:session # 세션을 저장하는 데 사용되는 키의 네임스페이스를 지정합니다.
+    
+#spring:
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/views/
+#      suffix: .jsp
+#spring:
+  #config.activate.on-profile: local

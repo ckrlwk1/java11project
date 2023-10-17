@@ -1,0 +1,411 @@
+@charset "utf-8";
+
+
+
+/******************************
+***
+***	Etc.
+***
+******************************/
+	
+	/* 처리완료 페이지 */
+	.complete_page {}
+	.complete_page .content_section {text-align:center; padding:40px 0 245px; background:url("../images/bg_phone03.png") center bottom no-repeat; background-size:115px auto;}
+	.complete_page .content_section .logo {margin-bottom:14px;}
+	.complete_page .content_section .logo img {width:259px;}
+	.complete_page .content_section .txt01 {font-size:24px; letter-spacing:-0.06em; font-weight:500;}
+	.complete_page .content_section .txt02 {font-size:12px; color:#000; letter-spacing:-0.03em; line-height:1.4; margin-top:10px;}
+	.complete_page .btnAlign_type01 {padding:0 20px; margin-top:50px;}
+
+
+
+
+
+
+
+
+/******************************
+***
+***	00 공통				01 회원가입로그인
+***
+******************************/
+
+	/* 02 본인인증 */
+	.certify_page {}
+	.certify_page .body_inner {padding-top:40px; padding-left:20px; padding-right:20px;}
+	.certify_page .M_title_type01 {padding-top:0;}
+	.certify_page .content_section {text-align:center;}
+	.certify_page .content_section .title {font-size:24px; letter-spacing:-0.05em;}
+	.certify_page .content_section .descTxt01 {font-size:13px; color:#000; letter-spacing:-0.05em; padding-bottom:230px; background:url("../images/bg_phone01.png") center bottom no-repeat; background-size:115px auto; margin-top:12px; line-height:1.4;}
+	.certify_page .content_section .descTxt02 {font-size:13px; color:#000; letter-spacing:-0.05em; margin-top:32px; line-height:1.4;}
+	.certify_page .btnAlign_type01 {margin-top:34px;}
+	/* PC */
+	@media (min-width:1600px) {
+		.certify_page .body_inner {padding-top:50px;}
+	}
+	
+
+	/* 03 약관동의 */
+	.termAgree_page {}
+	.termAgree_page .body_inner {padding-bottom:0;}
+	.termAgree_page .M_title_type01 {margin-bottom:0;}
+	.termAgree_page .header_wrap {padding:30px 20px 25px; background:#fff;}
+	.termAgree_page .header_wrap .logo {display:block; margin-bottom:4px;}
+	.termAgree_page .header_wrap .descTxt {line-height:1.6;}
+	.termAgree_page .header_wrap .btnAlign_type01 {margin-top:40px;}
+	.termAgree_page .termAgree_type01 {}
+
+
+	/* 04 상품선택 */
+	.prdListPC_page {}
+	.prdListPC_page .banner_type01 {margin-top:60px;}
+	.prdListPC_page .M_title_type01 {margin-bottom:40px;}
+	.prdListM_page {}
+
+
+	/* 04 상품선택 ___ 01 상품상세 */
+	.prdDetail_page {}
+	.prdDetail_page .body_inner {padding-bottom:0;}
+	.prdDetail_page .M_title_type01 {margin-bottom:0;}
+
+
+	/* 05 배송정보입력 */
+	.address_page {}
+	.address_page .body_inner {padding-top:25px; padding-left:20px; padding-right:20px;}
+	.address_page .M_title_type01 {padding-top:0;}
+
+
+	/* 06 가입완료 */
+	.signFin_page {}
+	.signFin_page .body_inner {padding-top:40px; padding-left:20px; padding-right:20px;}
+	.signFin_page .M_title_type01 {padding-top:0;}
+	.signFin_page .header_wrap {text-align:center;}
+	.signFin_page .header_wrap .logo {}
+	.signFin_page .header_wrap .title {font-size:24px; color:#000; font-weight:500; margin-top:5px;}
+	.signFin_page .header_wrap .descTxt {font-size:12px; letter-spacing:-0.03em; color:#000; margin-top:15px;}
+	/* PC */
+	@media (min-width:1600px) {
+		.signFin_page .body_inner {padding-top:50px;}
+	}
+
+	.signFin_page .appPlay_wrap {font-size:0; text-align:center; margin-top:40px;}
+	.signFin_page .appPlay_wrap .item {display:inline-block; vertical-align:middle; width:140px; height:315px; background:url("../images/bg_phone02.png") 0 0 no-repeat; background-size:100% 100%; position:relative;}
+	.signFin_page .appPlay_wrap .item + .item {margin-left:20px;}
+	.signFin_page .appPlay_wrap .tit {position:absolute; left:25px; right:25px; top:20px; font-size:13px; color:#fff; letter-spacing:-0.03em; line-height:1.3;}
+	.signFin_page .appPlay_wrap .tit span {color:#44ba41; font-weight:700; display:block;}
+	.signFin_page .appPlay_wrap .txt {font-size:11px; letter-spacing:-0.02em; position:absolute; left:20px; right:20px; top:130px; padding-top:85px; text-align:center; line-height:1.4;}
+	.signFin_page .appPlay_wrap .item.play .txt {background:url("../images/logo_gamepass03.png") center 7px no-repeat; background-size:59px auto;}
+	.signFin_page .appPlay_wrap .item.install .txt {background:url("../images/logo_google01.png") center 7px no-repeat; background-size:53px auto;}
+
+
+	/* 07 결제선택 */
+	.payment_page {/*background:#f4f5f7;*/}
+	.payment_page .body_inner {padding-bottom:0;}
+	.payment_page .M_title_type01 {margin-bottom:0;}
+	.payment_page .header_wrap {padding:25px 20px 30px; background:#fff;}
+	.payment_page .header_wrap .tagBox {margin-bottom:8px;}
+	.payment_page .header_wrap .prdName {font-size:21px; letter-spacing:-0.05em; font-weight:500; color:#000;}
+	.payment_page .content_section {background:#f4f5f7; padding:25px 0;}
+	.payment_page .content_section .section {}
+	.payment_page .content_section .section + .section {margin-top:30px;}
+	.payment_page .content_section .hd_inner {padding:0 20px 12px; position:relative;}
+	.payment_page .content_section .hd_inner .rBox {position:absolute; right:20px; top:50%; transform:translateY(-50%); margin-top:-6px;}
+	.payment_page .content_section .content_inner {padding:0 20px;}
+	.payment_page .content_section .content_inner .hd_inner {padding:15px 20px 0;}
+	.payment_page .content_section .content_inner .title01 {color:#000; font-weight:500; font-size:13px; margin-bottom:10px; padding-top:8px;}
+	.payment_page .content_section .content_inner.payMethod {padding:0 20px;} /* 결제방법 */
+	.payment_page .content_section .content_inner.payMethod .cont {}
+	.payment_page .content_section .content_inner.payMethod .cont + .cont {margin-top:10px;}
+	.payment_page .content_section .content_inner.payInfo {padding:0; background:#e0e0e0;} /* 결제정보 */
+	.payment_page .content_section .content_inner.disDetail {} /* 상세할인내역 */
+	.payment_page .content_section .content_inner.infoUse {} /* 이용안내 */
+	.payment_page .content_section .content_inner.addInfo {} /* 추가정보입력 */
+	.payment_page .content_section .content_inner.addInfo > .inner + .inner {margin-top:12px;}
+	.payment_page .content_section .section.termAgree {} /* 약관동의 */
+
+
+
+
+
+
+
+
+
+/******************************
+***
+***	00 공통				02 원스토어QR코드
+***
+******************************/
+
+	.qrcode_page {}
+	.qrcode_page .body_inner {padding-top:80px;}
+	.qrcode_page .content_section {text-align:center;}
+	.qrcode_page .content_section .logo {display:block; margin-bottom:30px;}
+	.qrcode_page .content_section .qrcode_wrap {box-sizing:border-box; width:500px; height:500px; border:1px solid #707070; background:#c9c9c9; margin:0 auto;}
+	.qrcode_page .content_section .title {font-size:30px; color:#000; letter-spacing:-0.02em; margin-top:50px; font-weight:700;}
+	.qrcode_page .content_section .txt {font-size:20px; color:#828282; margin-top:12px;}
+	.qrcode_page .btnAlign_type01.btmMain {margin-top:50px;}
+
+
+
+
+
+
+
+
+
+/******************************
+***
+***	01 메인
+***
+******************************/
+
+	/* PC */
+	.mainPC_page {}
+	.mainPC_page .body_inner {padding-bottom:0;}
+
+	.mainPC_page .main_banner {background:#000;}
+
+	.mainPC_page .banner_type02 {}
+	.mainPC_page .banner_type02 .swiper-slide {}
+	.mainPC_page .banner_type02 .swiper-slide a {display:block; height:663px; overflow:hidden;}
+	.mainPC_page .banner_type02 .swiper-slide img {width:1920px; height:663px; margin-left:-960px; position:relative; left:50%;}
+
+	.mainPC_page .apply_section {height:967px; background:url("../images/bg_main01_01_01.jpg") 0 0 repeat-x;}
+	.mainPC_page .apply_section .section_inner {padding-top:570px; text-align:center; box-sizing:border-box; height:100%; background:url("../images/bg_main01_01_02.jpg") center 0 no-repeat;}
+	.mainPC_page .apply_section .title {font-weight:700; letter-spacing:-0.03em; color:#000; font-size:50px; line-height:1.3;}
+	.mainPC_page .apply_section .title span {color:#107c10;}
+	.mainPC_page .apply_section .txt {font-size:20px; color:#000; line-height:1.5; margin-top:20px;}
+
+	.mainPC_page .recent_section {padding:60px 0 100px;}
+
+	.mainPC_page .suppor_section {background:#f2f2f2;}
+	.mainPC_page .suppor_section .section_inner {background:#f2f2f2; width:1380px; margin:0 auto; padding:45px 0 50px}
+
+
+
+	/* Mobile */
+	.mainM_page {}
+	.mainM_page .body_inner {padding-bottom:0;}
+
+	.mainM_page .apply_section {text-align:center; box-sizing:border-box; height:443px; background: url("../images/bg_main01_02_01.png") 0 0 repeat-x; background-size:auto 100%;}
+	.mainM_page .apply_section .section_inner {height:100%; box-sizing:border-box; padding-top:188px; background: url("../images/bg_main01_02_02.jpg") center 0 no-repeat; background-size:auto 100%;}
+	.mainM_page .apply_section .title {font-weight:700; letter-spacing:-0.03em; color:#000; font-size:25px; line-height:1.3;}
+	.mainM_page .apply_section .title span {color:#107c10;}
+	.mainM_page .apply_section .txt {font-size:12px; color:#000; line-height:1.4; margin-top:12px;}
+
+	.mainM_page .recent_section {padding:40px 0 55px;}
+
+	.mainM_page .suppor_section {background:#f2f2f2; padding:35px 0 75px;}
+
+
+
+
+
+
+
+
+
+
+/******************************
+***
+***	02 서비스소개
+***
+******************************/
+
+	/* 서비스소개_PC */
+	.aboutSvcPC_page {}
+	.aboutSvcPC_page .body_inner {padding-bottom:300px;}
+	.aboutSvcPC_page .main_banner {padding-top:412px; height:0; overflow:hidden; background:#f7f7f7 url("../images/img_banner02_01.jpg") center 0 no-repeat;}
+
+	.aboutSvcPC_page .advtg_section {text-align:center; padding:80px 0 90px;}
+	.aboutSvcPC_page .advtg_section .section_inner + .section_inner {margin-top:120px;}
+	.aboutSvcPC_page .advtg_section .section_inner.content01 {}
+	.aboutSvcPC_page .advtg_section .section_inner.content02 {}
+	.aboutSvcPC_page .advtg_section .section_inner.content02 .content_wrap {width:1300px; padding-top:566px; height:0; overflow:hidden; background:url("../images/bg_main03_01.jpg") 0 0 no-repeat; margin:0 auto;}
+	.aboutSvcPC_page .advtg_section .section_inner.content03 {}
+	.aboutSvcPC_page .advtg_section .section_inner.content03 .content_wrap {width:858px; padding-top:730px; height:0; overflow:hidden; background:url("../images/bg_main04_01.png") 0 0 no-repeat; margin:0 auto;}
+	
+	/*.aboutSvcPC_page .popular_section {padding:80px 0 100px; width:1380px; margin:0 auto;}*/
+
+	.aboutSvcPC_page .video_section {padding-top:80px; background:#3b3b3b; color:#fff; height:715px; box-sizing:border-box;}
+	.aboutSvcPC_page .video_section .section_inner {width:1380px; margin:0 auto;}
+	.aboutSvcPC_page .video_section .content_wrap {width:1000px; margin:0 auto;}
+
+	/*.aboutSvcPC_page .product_section {padding:230px 0 140px;}
+	.aboutSvcPC_page .product_section .notiTxt_type01 {font-size:22px; text-align:center; margin-top:110px;}*/
+
+
+
+	/* 서비스소개_Mobile */
+	.aboutSvcM_page {}
+	.aboutSvcM_page .body_inner {padding-bottom:155px;}
+
+	.aboutSvcM_page .main_banner {}
+	.aboutSvcM_page .main_banner .content01 {padding-top:200px; height:0; overflow:hidden; background:#f7f7f7 url("../images/bg_main02_01.jpg") center 0 no-repeat; background-size:auto 100%;}
+	.aboutSvcM_page .main_banner .content02 {}
+	.aboutSvcM_page .main_banner .content02 img {width:100%;}
+	.aboutSvcM_page .main_banner .content03 {padding-top:109px; height:0; overflow:hidden; background:#f7f7f7 url("../images/bg_main02_03.jpg") center 0 no-repeat; background-size:auto 100%;}
+
+	.aboutSvcM_page .advtg_section {text-align:center; padding:35px 0 50px;}
+	.aboutSvcM_page .advtg_section .section_inner + .section_inner {margin-top:65px;}
+	.aboutSvcM_page .advtg_section .section_inner.content01 {}
+	.aboutSvcM_page .advtg_section .section_inner.content02 {}
+	.aboutSvcM_page .advtg_section .section_inner.content02 .content_wrap {padding-top:571px; height:0; overflow:hidden; background:url("../images/bg_main03_02.jpg") center 0 no-repeat; background-size:auto 100%;}
+	.aboutSvcM_page .advtg_section .section_inner.content03 {}
+	.aboutSvcM_page .advtg_section .section_inner.content03 .content_wrap {padding-top:411px; height:0; overflow:hidden; background:url("../images/bg_main04_02.png") center 0 no-repeat; background-size:auto 100%;}
+	
+
+	.aboutSvcM_page .video_section {padding:35px 0 38%; background:#3b3b3b; color:#fff; height:143px;}
+	.aboutSvcM_page .video_section .section_inner {padding:0 15px;}
+	.aboutSvcM_page .video_section .content_wrap {}
+
+
+	/* 게임소개_PC */
+	.aboutGamePC_page .body_inner {padding-bottom:0; width:auto;}
+	.aboutGamePC_page .main_banner {padding-top:412px; height:0; overflow:hidden; background:#171717 url("../images/img_banner03_01.jpg") center 0 no-repeat;}
+	.aboutGamePC_page .content_section {padding:80px 0 100px; width:1380px; margin:0 auto;}
+	/*.aboutGamePC_page .banner_type02 {}
+	.aboutGamePC_page .banner_type02 .swiper-slide {}
+	.aboutGamePC_page .banner_type02 .swiper-slide a {display:block; height:720px; overflow:hidden;}
+	.aboutGamePC_page .banner_type02 .swiper-slide img {width:1920px; height:720px; margin-left:-960px; position:relative; left:50%;}*/
+
+	/* 게임소개_Mobile */
+	.aboutGameM_page {}
+	.aboutGameM_page .main_banner {padding-top:152px; height:0; overflow:hidden; background:#000 url("../images/img_banner03_02.jpg") center 0 no-repeat; background-size:auto 100%;}
+	.aboutGameM_page .content_section {background:#f4f5f7;}
+	.aboutGameM_page .content_section .tab_type02 {margin-bottom:15px;}
+	.aboutGameM_page .content_section .section_inner {background:#fff;}
+	.aboutGameM_page .content_section .header_wrap {padding:30px 20px 20px;}
+	.aboutGameM_page .content_section .header_wrap .logo {}
+	.aboutGameM_page .content_section .header_wrap .txt01 {margin-top:10px; font-size:14px; color:#000; letter-spacing:-0.04em;}
+	.aboutGameM_page .content_section .header_wrap .selectBox01 {margin-top:25px;}
+
+
+
+
+
+
+
+
+/******************************
+***
+***	03 이벤트
+***
+******************************/
+
+	/* 리스트 */
+	.eventList_page {/*background:#f4f5f7;*/}
+	.eventList_page .body_inner {padding-bottom:0;}
+
+
+	/* 상세 */
+	.eventDetail_page {}
+
+
+
+
+
+/******************************
+***
+***	04 고객센터
+***
+******************************/
+
+	/* 01 FAQ */
+	.customer_page {}
+
+	/* 02 1대1문의하기 */
+	.inquire_page {}
+
+	/* 03 공지사항 */
+	.notice_page {}
+
+
+
+
+
+
+
+/******************************
+***
+***	05 마이페이지
+***
+******************************/
+
+
+	/* 01 구매내역 */
+	.orderDeail_page {}
+
+
+
+	/* 02 클레임내역 */
+	.claimDeail_page {}
+
+
+
+	/* 03 1대1문의내역 _ 리스트 */
+	.inquireList_page {}
+
+	/* 03 1대1문의내역 _ 상세 */
+	.inquireDetail_page {}
+
+
+
+	/* 04 서비스해지 */
+	.cancel_page {}
+	.cancel_page .body_inner {padding-bottom:0;}
+
+
+
+
+
+
+/******************************
+***
+***	팝업
+***
+******************************/
+
+	/* 공유하기 */
+	.p_share_page {}
+	.p_share_page .sns_wrap {padding:30px 15px; font-size:0; text-align:center;}
+	.p_share_page .sns_wrap li {display:inline-block; vertical-align:middle;}
+	.p_share_page .sns_wrap li + li {margin-left:15px;}
+	.p_share_page .sns_wrap li a {display:block; width:80px; padding-top:80px; height:0; overflow:hidden; border-radius:50%;}
+	.p_share_page .sns_wrap li a.kakao {background:#ffd900 url("../images/ico_sns01_01.png") center center no-repeat; background-size:47px auto;}
+	.p_share_page .sns_wrap li a.facebook {background:#4268b3 url("../images/ico_sns01_02.png") center center no-repeat; background-size:18px auto;}
+	.p_share_page .sns_wrap li a.twitter {background:#0886cc url("../images/ico_sns01_03.png") 22px 23px no-repeat; background-size:41px auto;}
+	.p_share_page .url_wrap {padding:15px 110px 25px 15px; position:relative; border-top:1px solid #f1f1f1;}
+	.p_share_page .url_wrap .txtEntry01 {}
+	.p_share_page .url_wrap .btn_type01 {position:absolute; right:15px; top:15px; width:85px;}
+
+
+	/* 배송정보조회 */
+	.p_shipping_page {}
+
+
+	/* 클레임상세내역 */
+	.p_claim_page {}
+
+
+	/* 구독해지신청 */
+	.p_cancel_page {}
+
+
+	/* 게임상세 */
+	.p_gameDetail_page .body_inner {padding:20px;}
+
+	/* 배송정보입력 */
+	.p_address_page {}
+	.p_address_page .body_inner {/*padding:0;*/}
+
+	/* [공통] 공지용 _ 긴급점검안내 */
+	.p_notice_page {}
+	.p_notice_page .agree_wrap {}
+	.p_notice_page .agree_wrap label {display:block; background:#f1f1f1; height:50px; line-height:50px; position:relative; box-sizing:border-box; padding:0 70px 0 20px;}
+	.p_notice_page .agree_wrap label input {position:absolute; left:-10px; top:0;}
+	.p_notice_page .agree_wrap label .c_name {color:#828282; font-size:13px;}
+	.p_notice_page .agree_wrap label .c_name::after {content:""; position:absolute; right:20px; top:50%; width:30px; height:30px; margin-top:-15px; background:url("../images/bg_checkbox01_off.png") 0 0 no-repeat; background-size:30px auto;}
+	.p_notice_page .agree_wrap label input:checked + .c_name {color:#000;}
+	.p_notice_page .agree_wrap label input:checked + .c_name::after {background-image:url("../images/bg_checkbox01_on.png");}

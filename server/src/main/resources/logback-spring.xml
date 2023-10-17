@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 60초마다 설정 파일의 변경을 확인 하여 변경시 갱신 -->
+<configuration scan="true" scanPeriod="30 seconds">
+<!-- 	<contextListener class="com.skt.tx.sys.config.LoggerStartupListener"/> -->
+<!-- 	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator"> -->
+<!-- 	    <resetJUL>true</resetJUL> -->
+<!-- 	  </contextListener> -->
+	
+	<property resource="logs/logback-local.properties" />
+
+
+	<!-- application.yml -->
+    <property name="LOG_LEVEL" value="${logging.level.root}" />
+        
+    <!-- application.yml 의 spring.profiles.active 에 맞는 
+    	resources/logs/logbck-xxx-.properties 파일에서 값을 가져온다
+    -->
+	<property name="LOG_PATH" value="${log.config.path}" />
+	<property name="LOG_API_PATH" value="${log.config.path}/${log.config.environment}/api" />
+	<property name="LOG_FILE_NAME" value="${MY_FILENAME}_${log.config.filename}" />
+	<property name="LOG_JDBC_LEVEL" value="${log.jdbc.level}" />
+	<!-- <property name="DB_APPENDER_DRIVERCLASSNAME" value="${spring.datasource.driverClassName}" />
+	<property name="DB_APPENDER_URL" value="${spring.datasource.url}" />
+	<property name="DB_APPENDER_USERNAME" value="${spring.datasource.username}" />
+	<property name="DB_APPENDER_USERPASSWORD" value="${spring.datasource.password}" /> -->
+	
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_API_PATH}/${LOG_FILE_NAME}.log</file>
+<!--         <filter class="com.skt.tx.comm.filter.LoggingApiFilter"/> -->
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_API_PATH}/${LOG_FILE_NAME}.%d{yyyyMMdd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+	
+	<!-- jdbc console log -->
+ 	<logger name="jdbc" level="${LOG_JDBC_LEVEL}" />
+    <logger name="jdbc.connection" level="OFF" />      							<!-- 연결되어 있는 DB 커넥션 정보를 보여줌. 커넥션 관련하여 오류가 발생할 경우 체크해 볼 만하다. -->
+    <logger name="jdbc.sqlonly" level="${LOG_JDBC_LEVEL}" additivity="false" />	<!-- 수행한 쿼리 -->
+    <logger name="jdbc.sqltiming" level="${LOG_JDBC_LEVEL}" />      			<!-- 쿼리를 수행하는데 걸린 시간 -->
+    <logger name="jdbc.audit" level="OFF" />       								<!-- JDBC 호출 정보 -->
+    <logger name="jdbc.resultset" level="OFF" />      							<!-- 쿼리 수행 결과를 텍스트 형태로 보여줌 -->
+    <logger name="jdbc.resultsettable" level="${LOG_JDBC_LEVEL}" />     		<!-- 쿼리 수행 결과를 테이블 형태로 보여줌 -->
+    
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread][%X{traceId}][%X{ip}] %-5level %logger{36}.%M:%L - %msg%n</Pattern>
+        </layout>
+    </appender>
+    
+    <logger name="logging.level.com.zaxxer.hikari" level="ERROR"/>
+    <logger name="com.zaxxer.hikari.pool.PoolBase" level="ERROR"/>
+    <logger name="com.zaxxer.hikari.pool.HikariPool" level="ERROR"/>
+    <logger name="org.apache.tiles.request.locale.PostfixedApplicationResource" level="ERROR"/>
+	<logger name="logging.level.org.apache.tiles.request.locale.PostfixedApplicationResource" level="ERROR"/>
+    
+    <logger name="org.springframework.security.*" level="OFF" />
+    
+<!--     <logger name="com.skt.tx.comm.aop.ApiAspect" level="INFO"> -->
+<!-- 	    <appender-ref ref="FILE" /> -->
+<!-- 	</logger> -->
+<!-- 	<logger name="com.skt.tx.comm.interceptor.RestTemplateRequestInterceptor" level="INFO"> -->
+<!-- 	    <appender-ref ref="FILE" /> -->
+<!-- 	</logger> -->
+	
+    <root level="${LOG_LEVEL}">
+		<appender-ref ref="CONSOLE" />
+	</root>
+    
+
+</configuration>

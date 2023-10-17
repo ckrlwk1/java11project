@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.server.user.mapper.UserMapper">
+	
+	<sql id="selectAdminListSql">
+		ADMIN_ID																AS adminId
+	 ,  ADMIN_NM																		AS adminNm
+	 ,  ADMIN_PW																		AS adminPw
+	 ,  ADMIN_STATUS_CD																AS adminStatusCd
+	 ,  MOBILE_COMPANY_CD															AS adminMobileCd
+	</sql>
+	
+	<select id="getUserInfo" parameterType="UserVo" resultType="UserVo">
+		select 
+			<include refid="selectAdminListSql" />
+		from
+			tb_admin_info
+		where 
+			admin_id = #{adminId}	 
+	</select>
+	<select id="getAdminUserList" parameterType="UserVo" resultType="UserVo">
+		select 
+			<include refid="selectAdminListSql" />
+		from
+			tb_admin_info
+	</select>
+	
+	
+</mapper>

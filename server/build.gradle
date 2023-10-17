@@ -1,0 +1,53 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.15'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '11'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	
+	
+	implementation 'org.mybatis:mybatis:3.5.6' // MyBatis 버전은 필요에 따라 업데이트하세요.
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0' // MyBatis-Spring Boot Starter 버전은 필요에 따라 업데이트하세요.
+	
+	implementation group: 'com.zaxxer', name: 'HikariCP', version: '3.4.5'
+	// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+    implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.31'
+    implementation group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4.1', version: '1.16'
+    
+    implementation 'javax.servlet:jstl:1.2'
+	
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	
+	
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+bootRun {
+    String activeProfile = 'local'
+    systemProperty "spring.profiles.active", activeProfile
+}

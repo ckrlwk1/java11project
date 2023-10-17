@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.server.menu.mapper.MenuMapper">
+	
+	
+	<sql id="selectMenuTreeSql">
+		SELECT DC.MENU_ID							AS menuId
+			 , MENU_NM  	 						AS menuNm
+			 , CASE WHEN UPPER_MENU_ID = ''
+			        THEN '#' 
+			 		ELSE UPPER_MENU_ID
+			    END 								AS upperMenuId
+			 , CAST(DC2.lev AS CHAR) 				AS level
+			 , CASE WHEN UPPER_MENU_ID = ''
+			        THEN 'default' 
+			   		WHEN (SELECT COUNT(*)
+			   		        FROM TB_MENU_INFO
+			   		       WHERE UPPER_MENU_ID = DC.MENU_ID) <![CDATA[ > ]]> 0
+			   	    THEN 'default'
+			 		ELSE 'file'
+			    END 								AS type
+			 , MENU_ORDER							AS menuOrder
+			 , TYPE_CD  							AS typeCd
+			 , MENU_DESC 							AS menuDesc
+			 , LINK_URL								AS linkUrl
+			 , (SELECT COUNT(*)
+			      FROM TB_MENU_INFO
+			     WHERE DC.MENU_ID = UPPER_MENU_ID)	AS level2MenuRowspan
+			 , AUTH_YN as authYn
+		  FROM (SELECT fnc_hierarchi()	AS MENU_ID
+		             , @level 			AS lev
+		          FROM (SELECT @start_with := ''
+		                     , @MENU_ID := @start_with
+		                     , @level := 0) vars
+		             , TB_MENU_INFO
+		         WHERE @MENU_ID IS NOT NULL) DC2
+		  JOIN TB_MENU_INFO DC
+		    ON DC.MENU_ID = DC2.MENU_ID
+		 WHERE DC.type_cd != 'P'
+  	</sql>
+	
+	<select id="selectMenuTreeList" parameterType="hashMap" resultType="hashMap" statementType="CALLABLE">
+  		/* SQL mapper : menu.selectMenuTreeList 관리자 트리 메뉴 조회 */
+  		<include refid="selectMenuTreeSql" />
+		<choose>
+			<when test="menuLevel != null and !menuLevel.equalsIgnoreCase('')">
+				AND CAST(dc2.lev AS CHAR) = #{menuLevel}
+				AND TYPE_CD NOT IN('FM', 'FS', 'UL')
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+		ORDER BY level ASC, MENU_ORDER ASC
+  	</select>
+	
+	
+</mapper>
